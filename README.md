@@ -1,8 +1,6 @@
 # project
 
-[![Test and Deploy][actions-badge]][commits-gh]
-[![pipeline status][pipeline-badge]][commits-gl]
-[![coverage report][coverage-badge]][commits-gl]
+[![Test and Deploy][actions-badge]][commits-gh] [![pipeline status][pipeline-badge]][commits-gl] [![coverage report][coverage-badge]][commits-gl]
 
 # Tugas Kelompok PBP F07
 
@@ -52,3 +50,9 @@ Banyaknya masalah yang dialami oleh sebagian mahasiswa yang sulit dalam menentuk
 - Pain:
     - Memiliki banyak tugas yang berdekatan deadline nya
     - Suka lupa kalau ada tugas apa saja
+
+[actions-badge]: https://github.com/laymonage/django-template-heroku/workflows/Test%20and%20Deploy/badge.svg
+[commits-gh]: https://gitlab.com/farhan.hanif/projek-f07/-/commits/master
+[pipeline-badge]: https://gitlab.com/farhan.hanif/projek-f07/badges/master/pipeline.svg
+[coverage-badge]: https://gitlab.com/farhan.hanif/projek-f07/badges/master/coverage.svg
+[commits-gl]: https://gitlab.com/farhan.hanif/projek-f07/pipelines
