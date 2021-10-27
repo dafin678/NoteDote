@@ -230,6 +230,8 @@ table{
 }
 .body-card{
   background-color: #2d2e30;
+  height: auto;
+  min-height: 100%;
   color:white;
   font-size:18px;
 }
