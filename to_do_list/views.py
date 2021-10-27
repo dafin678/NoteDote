@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import to_do_list
 from .forms import ToDoForm
-from rest_framework.response import Response
+# from rest_framework.response import Response
 # from .serializers import TaskSerializer
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -30,8 +30,8 @@ def add_task(request):
 
 	# return Response(serializer.data)
 
-def taskDelete(request, pk):
-	task = to_do_list.objects.get(id=pk)
-	task.delete()
+# def taskDelete(request, pk):
+# 	task = to_do_list.objects.get(id=pk)
+# 	task.delete()
 
-	return Response('Item succsesfully delete!')
+# 	return Response('Item succsesfully delete!')
