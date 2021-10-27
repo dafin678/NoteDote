@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" type= "text/css" href="{% static 'style.css'%}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+</head>
+<body>
+    <div class = body-form>
+        <header>
+          <div class="container">
+            <div class="header-right">
+              <a href="/to-do-list"><b>Home</b></a>
+              <a href="/to-do-list/add-task"><b>Add Task</b></a>
+            </div>
+          </div>
+        </header>  
+        <div class ="body-container">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+      
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit"  value="submit">
+                </form>
+            </div>
+        </div>
+      </div>    
+</body>
+</html>
