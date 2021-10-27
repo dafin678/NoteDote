@@ -28,7 +28,7 @@ def add_task(request):
 # 	if serializer.is_valid():
 # 		serializer.save()
 
-	return Response(serializer.data)
+	# return Response(serializer.data)
 
 def taskDelete(request, pk):
 	task = to_do_list.objects.get(id=pk)
