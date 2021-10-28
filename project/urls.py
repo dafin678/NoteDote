@@ -17,11 +17,19 @@ from django.contrib import admin
 from django.urls import include, path, re_path
 import to_do_list.urls as to_do_list
 from to_do_list.views import index as index_to_do_list
+<<<<<<< HEAD
 # import weekly_schedule.urls as weekly_schedule
+=======
+import weekly_schedule.urls as weekly_schedule
+>>>>>>> 286fb67b0c5938aaa5d167981a7095f51e32f329
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('to-do-list/', include(to_do_list)),
+<<<<<<< HEAD
     # path('weekly_schedule/', include(weekly_schedule)),
+=======
+    path('weekly_schedule/', include(weekly_schedule)),
+>>>>>>> 286fb67b0c5938aaa5d167981a7095f51e32f329
     re_path(r'^$', index_to_do_list, name='index')
 ]
