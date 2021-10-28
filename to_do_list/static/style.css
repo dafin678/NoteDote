@@ -198,6 +198,7 @@ header {
   box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
   transition: 0.3s;
   width: 500px;
+  height: 150px;
   display: inline-grid;
   grid-template-rows: 30px 50px 1fr 50px;
   border-radius: 10px;
@@ -213,15 +214,17 @@ header {
 }
 
 .body-card{
-  background-color: #2d2e30 !important;
-  height: auto !important;
+  background-color: #2d2e30;
+  height: auto;
   min-height: 100%;
   color:white;
   font-size:18px;
 }
 
 .body-form{
-  background: #EAF6F6;;
+  background: #2d2e30;;
   height: auto;
+  color: white;
+  font-size:18px;
   min-height: 100%;
 }
