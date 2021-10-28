@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+</style>
+</head>
+<body>
+ 
+
+<h2>Isi Pesan Motivasi</h2>
+<br></br>
+{% for x in motivasi %}
+<div class="card">
+  <div class="container">
+    
+    <p><label> to: </label><b> {{ x.to }} </b></p> 
+    <p><label> pesan: </label><b> {{ x.pesan }} </b></p> 
+
+    <a href = "{% url 'main:delete-motivasi' x.id %}"  class= "btn btn-outline-danger btn-sm"> Delete </a>
+    
+
+  </div>
+</div>
+
+
+{% endfor %}
+
+{% endblock %}
+<br>
+</body>
+</html> 
+
