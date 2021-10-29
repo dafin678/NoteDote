@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'to_do_list',
     'weekly_schedule',
+    'notes',
     # 'rest_framework'
 ]
 
