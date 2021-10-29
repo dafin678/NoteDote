@@ -18,8 +18,12 @@ from django.urls import include, path, re_path
 import to_do_list.urls as to_do_list
 from to_do_list.views import index as index_to_do_list
 <<<<<<< HEAD
+<<<<<<< HEAD
 # import weekly_schedule.urls as weekly_schedule
 =======
+=======
+import profile_page.urls as profile
+>>>>>>> e48d9b79ce2a013cdec4e8bac144e2e88cf4146e
 import weekly_schedule.urls as weekly_schedule
 >>>>>>> 286fb67b0c5938aaa5d167981a7095f51e32f329
 
@@ -27,8 +31,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('to-do-list/', include(to_do_list)),
 <<<<<<< HEAD
+<<<<<<< HEAD
     # path('weekly_schedule/', include(weekly_schedule)),
 =======
+=======
+    path('profile/', include(profile)),
+>>>>>>> e48d9b79ce2a013cdec4e8bac144e2e88cf4146e
     path('weekly_schedule/', include(weekly_schedule)),
 >>>>>>> 286fb67b0c5938aaa5d167981a7095f51e32f329
     re_path(r'^$', index_to_do_list, name='index')
