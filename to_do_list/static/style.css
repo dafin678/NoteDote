@@ -141,10 +141,12 @@ p{
     line-height: 83px;
     text-align: center;
 }
+
 body {
   font-family: "Lucida Grande";
   height:100vh;
 }
+
 .container {
   max-width: 1100px;
   padding: 0 15px;
@@ -154,7 +156,6 @@ header {
   height: 65px;
   width: 100%;
   background-color:#1f1f1f;
-
   position :fixed;
 }
 .header-left {
@@ -188,46 +189,30 @@ header {
 .body-container{
   padding: 100px 0 100px 0; 
 }
-
-.table-container{
-  display:flex; 
-  flex-direction: column; 
-  align-items:center;
-}
-
-table,th,td{
-  border:3px solid black;
-  background-color: white;
-  width:700px;
-  padding:10px;
-}
-table{
-  border-collapse: collapse;
-  box-shadow: 0 0 30px #2baaf3;
-}
-
 .card {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 70px;
   padding: 20px;
   background-color: #555555;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
   transition: 0.3s;
   width: 500px;
+  height: 150px;
   display: inline-grid;
   grid-template-rows: 30px 50px 1fr 50px;
   border-radius: 10px;
 }
 
-/* .card:hover {
+.card:hover {
   box-shadow: 0 8px 30px 0 #8396d8;
   transform: scale(1);
-} */
+}
 
 .container-card {
-  padding: 20px 26px;
+  /* padding: 20px 26px; */
 }
+
 .body-card{
   background-color: #2d2e30;
   height: auto;
@@ -237,13 +222,9 @@ table{
 }
 
 .body-form{
-  background: #EAF6F6;;
-  height: 100%;
-  background-size:cover;
+  background: #2d2e30;;
+  height: auto;
+  color: white;
+  font-size:18px;
+  min-height: 100%;
 }
-.body-index{
-  background: #EAF6F6;
-  height: 100vh;
-  background-size:cover;
-}
-
