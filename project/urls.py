@@ -19,11 +19,13 @@ import to_do_list.urls as to_do_list
 from to_do_list.views import index as index_to_do_list
 import profile_page.urls as profile
 import weekly_schedule.urls as weekly_schedule
+import login_register.urls as login_register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('to-do-list/', include(to_do_list)),
     path('profile/', include(profile)),
     path('weekly_schedule/', include(weekly_schedule)),
+    path('login/', include(login_register)),
     re_path(r'^$', index_to_do_list, name='index')
 ]
