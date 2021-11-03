@@ -55,8 +55,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'to_do_list',
+    'tasks',
+    'profile_page',
     'weekly_schedule',
+    'login_register',
+    'notes',
+    'personal_journal',
+    'ckeditor',
     # 'rest_framework'
 ]
 
@@ -150,9 +155,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Directory where uploaded media is saved.
+MEDIA_URL = '/media/' # Public URL at the browser
+
 # This is the directory for storing `collectstatic` results.
 # This shouldn't be included in your Git repository.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # You can use this directory to store project-wide static files.
 STATICFILES_DIRS = [

@@ -11,11 +11,11 @@
       <header>
         <div class="container">
           <div class="header-left">
-            Task
+            Notes
           </div>
           <div class="header-right">
-            <a href="/to-do-list"><b>Home</b></a>
-            <a href="/to-do-list/add-task"><b>Add Task</b></a>
+            <a href="/tasks"><b>View Task</b></a>
+            <a href="/note-list"><b>Note List</b></a>
           </div>
         </div>
       </header>  
@@ -87,37 +87,19 @@
               </li>  
           </ul>
       </nav>
-          {%for task in to_do%}
+          {%for notes in note%}
           <div class="card">
               <div class="container-card">
-                  <h4 style="font-weight: bold; text-align: center;"> {{task.name}}</b></h4>
+                  <h4 style="font-weight: bold; text-align: center;"> {{notes.title}}</b></h4>
                   <br>
-                  <p1>Category : {{task.category}} </p1>
+                  <p1>Author : {{notes.author}}</p1>
                   <br>
-                  <p2>Due Date : {{task.due_date}}</p2>
+                  <p2>Note : {{notes.message}}</p2>
                   <br>
-                  <p3>Description : {{task.description}} </p3>
-                  <br>
-                  <br>
-                  <button style="background: #555555; color: white;" type="button" onclick="deleteItem(item)">Done</button>
               </div>
           </div>
           {%endfor%}
       </div>
     </div>
-    <script>
-        	function deleteItem(item){
-			console.log('Delete clicked')
-			fetch(`http://127.0.0.1:8000/api/task-delete/${item.id}/`, {
-				method:'DELETE', 
-				headers:{
-					'Content-type':'application/json',
-					'X-CSRFToken':csrftoken,
-				}
-			}).then((response) => {
-				buildList()
-			})
-		}
-    </script>
   </body>    
 </html>
