@@ -58,6 +58,8 @@ INSTALLED_APPS = [
     'tasks',
     'profile_page',
     'weekly_schedule',
+    'login_register'
+    # 'rest_framework'
 ]
 
 MIDDLEWARE = [
