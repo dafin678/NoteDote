@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'weekly_schedule',
     'login_register',
     'notes',
+    'personal_journal',
+    'ckeditor',
     # 'rest_framework'
 ]
 
