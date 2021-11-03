@@ -38,13 +38,19 @@ urlpatterns = [
 import to_do_list.urls as to_do_list
 from to_do_list.views import index as index_to_do_list
 import weekly_schedule.urls as weekly_schedule
+<<<<<<< HEAD
 import profile_page.urls as profile
 import weekly_schedule.urls as weekly_schedule
+=======
+>>>>>>> de59dbfc8a03b4cc1e59f99d0a6a9f87c1177ac8
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('to-do-list/', include(to_do_list)),
+<<<<<<< HEAD
     path('profile/', include(profile)),
+=======
+>>>>>>> de59dbfc8a03b4cc1e59f99d0a6a9f87c1177ac8
     path('weekly_schedule/', include(weekly_schedule)),
     re_path(r'^$', index_to_do_list, name='index')
 ]
