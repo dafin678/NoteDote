@@ -55,9 +55,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'to_do_list',
+    'tasks',
     'profile_page',
     'weekly_schedule',
+    'login_register',
     'notes',
     # 'rest_framework'
 ]
