@@ -19,6 +19,7 @@ from tasks.views import ViewTaskView as index_to_do_list
 import tasks.urls as tasks
 import profile_page.urls as profile
 import weekly_schedule.urls as weekly_schedule
+import personal_journal.urls as personal_journal
 import notes.urls as notes
 import login_register.urls as login_register
 
@@ -29,5 +30,6 @@ urlpatterns = [
     path('profile/', include(profile)),
     path('weekly_schedule/', include(weekly_schedule)),
     path('login/', include(login_register)),
+    path('personal_journal/', include(personal_journal)),
     re_path(r'^$', index_to_do_list.as_view(), name='index')
 ]
