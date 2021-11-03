@@ -7,4 +7,4 @@ class Weekly_schedule(models.Model):
     day = models.CharField(max_length=15)
     start_time = models.TimeField()
     due_time = models.TimeField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default='')
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, default='')
