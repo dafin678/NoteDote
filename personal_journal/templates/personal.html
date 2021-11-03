@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Personal Journal</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" /> -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://kit.fontawesom.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min/js"></script>
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">Personal<span class="Jurnal"></span></a></div>
+            <ul class="menu">
+                <li><a href="{% url 'add' %}">Add new journal</a></li>   
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="max-width">
+            
+            {% for entry in entries %}
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <a class="title" href="{% url 'detail' entry.id %}">{{entry.title}}</a>
+                                <br class="text"> {{entry.text|safe}}
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+        <script src="{% static 'js/script.js' %}"></script>
+    </section>
+    
+    <footer class="footer">
+    </footer>
+</body>
+
+</html>
