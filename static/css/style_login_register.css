@@ -1,0 +1,63 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #2d2e30;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container {
+    width: 100%;
+    height: 20%;
+    background-color: white;
+}
+
+nav {
+    max-width: 1720px;
+    /* margin: 0 auto; */
+    display: flex;
+    flex-direction: row;
+}
+
+.right-menu {
+    grid-column: 3;
+}
+
+.logo {
+    grid-column: 1;
+    padding-left: 100px;
+}
+
+h1, h2, h3, p {
+    font-family: 'titillium', sans-serif;
+    color: whitesmoke;
+}
+
+img {
+    max-width: auto;
+    max-height: 30%;
+}
+
+#login_title {
+    padding: 10px 10px 10px 10px;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #4d4d4d;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 8px;
+    width: 10em;
+    height: auto;
+}
+
+.prompt, p {
+    padding: 10px 5px 10px 5px;
+}

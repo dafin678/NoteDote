@@ -1,16 +1,30 @@
+{% load static %}
 <html>
-    <head>
-        <title>NoteDote | Login</title>        
-    </head>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/style_login_register.css' %}">
+    <title>NoteDote | Login</title>   
+    <div class="nav-container">
+       <nav>
+            <div class="right-menu">
+                <a href="#">Shop</a>
+                <a href="#">Blog</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="logo">
+            <img src ="{%static 'notedote_logo.png' %}">
+            </div>
+        </nav>
+    <div>     
+</head>
     <body>
-<form method="POST">{% csrf_token %}
-    
-<!-- form variable -->    
- {{ form.as_p }} 
-
-  <input type="submit" name="sumbit">
-</form>
+        <div class="boxes">
+            <h1 id="login_title">Login</h1>
+            <h2 class="prompt">Username</h2>
+            <h2 class="prompt">Password</h2>
+            <p>Don't have an account yet? Register</p>
+        </div> 
     </body>
-
 </html>
