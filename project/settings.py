@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'to_do_list',
     'profile_page',
     'weekly_schedule',
+    'login_register'
     # 'rest_framework'
 ]
 
