@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'tasks',
     'profile_page',
     'weekly_schedule',
-    'login_register'
+    'login_register',
+    'notes',
     # 'rest_framework'
 ]
 
