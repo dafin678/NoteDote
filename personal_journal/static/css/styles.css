@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.navbar{
+    width: 100%;
+    padding: 15px 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .menu li a{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover{
+    color:crimson;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+
+.navbar .logo a:hover{
+    color:crimson;
+}
+
+.navbar .logo a span{
+    color: crimson;
+}
+
+
+.media{
+    padding-top: 40px; 
+    padding-bottom: 40px;
+} 
+
+.media .content{
+    /* margin-left: 40px;
+    margin-right: 40px; */
+    text-align: justify;
+    
+}
+
+.media .content .title{
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.section .container{
+    border: 10px;
+    height: 90vh;
+}
+
+.section .max-width{
+    margin: auto 0 auto 40px;
+}
+
+.sub-menu{
+    display: none;
+}
+
+.navbar ul li:hover .sub-menu{
+    display: inline-block;
+    position: absolute;
+    background-color: black;
+    color: #fff;
+   
+    
+}
+
+.navbar ul li:hover .sub-menu ul{
+    text-align: center;
+}
+
+/* 
+ .section{
+    border: 10px;
+    height: 90vh;
+} */
+
+/* .media{
+    position: relative;
+    border: 10px;
+    max-width: 900px; 
+}  */
+
+.media .form-input .input{
+    width: 73.4%;
+}
+
+.button-1{
+    padding: 5px 25px;
+    background:black;
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.button-1:hover{
+    color:crimson;
+}
+
+
+.title {
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.title:hover{
+    color:crimson;
+}
+
+
+/* .media .form-input .django-ckeditor-widget{
+    width: 10%;
+} */
+
+/* .form-input{
+    display: inline-block;
+    margin: auto;
+    position: relative;
+} */
+
+
+
+
+
+
+
+
+
+

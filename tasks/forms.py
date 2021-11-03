@@ -1,11 +1,11 @@
 from django import forms
 from django.db.models import fields
-from .models import to_do_list
+from .models import Task
 
 
-class ToDoForm(forms.ModelForm):
+class TaskForm(forms.ModelForm):
 	class Meta:
-		model = to_do_list
+		model = Task
 		fields = "__all__"
 		error_messages = {
 			'required' : 'Please Fill All Required Informations'
