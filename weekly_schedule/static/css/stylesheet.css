@@ -1,8 +1,115 @@
-/* * {
-    background-color: yellow;
-} */
-.weakly-schedule-h1 {
+body {
+    margin: 0;
+}
+
+#weakly-schedule-h1 {
     text-align: center;
-    /* color: blue; */
-    margin-bottom: 30px
+    color: #87AAAA;
+    /* margin-bottom: 30px */
+    margin-top: -100px;
+}
+
+#navbar-schedule {
+    margin: auto;
+}
+
+.card {
+    height: 400px;
+    width: fit-content;
+    overflow-y: auto;
+    margin-left: 10px;
+}
+
+.card-title {
+    font-size: x-large;
+    text-align: center;
+}
+
+.card-subtitle {
+    text-align: center;
+}
+
+.complete {
+    border-radius: 0.25rem;
+    background-color: #082032;
+    border-color: #082032;
+    color: white;
+}
+
+.complete:hover {
+    background-color: #ADC2A9;
+}
+
+.row {
+    /* margin: auto; */
+}
+
+.col {
+    /* margin: auto 30px; */
+}
+
+.navbar {
+    text-align: center;
+    align-items: center;
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  top: 0;
+  background-color:#343a40!important;
+  /* position :fixed;
+  overflow: hidden; */
+  position :relative;
+  margin-top: 0px;
+  margin-bottom: 100px;
+}
+
+.header-left {
+  line-height: 65px;
+  padding: 0 30px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s; 
+  text-decoration: none;
+  font-size:20px;
+}
+.header-right {
+    float: right;
+    margin-right: -80px;
+}
+.header-right a {
+    line-height: 65px;
+    padding: 0 30px;
+    color: white;
+    display: block;
+    float: left;
+    transition: all 0.5s; 
+    text-decoration: none;
+    font-size:20px;
+}
+.header-right a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-schedule {
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    margin: 10px;
+    list-style: none;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    border-radius: 0.25rem;
+}
+
+.submit-btn:hover {
+    background-color: #3D56B2;
+    color: white;
 }
