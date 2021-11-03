@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Note Dote</title>
+  {% load static %}
+  <link rel = "stylesheet" type= "text/css" href="{% static 'style.css'%}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <style>
+    .text-red{
+        color: tomato !important;
+    }
+</style>
+</head>
+
+<body>
+    <div class = body-form>
+        <header>
+          <div class="container">
+            <div class="header-right">
+                <a href="/tasks"><b>View Task</b></a>
+                <a href="/tasks/add-task"><b>Add Task</b></a>
+            </div>
+          </div>
+        </header>  
+        <div class ="body-container">
+          <div class="area"></div><nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="/tasks">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Dashboard
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            Personal Journal
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-folder-open fa-2x"></i>
+                        <span class="nav-text">
+                            Notes
+                        </span>
+                    </a>
+                   
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-font fa-2x"></i>
+                        <span class="nav-text">
+                           Quotes
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="/weekly_schedule">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            Weekly Schedule
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                       <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                            Profile
+                        </span>
+                    </a>
+                </li>
+            </ul>
+  
+            <ul class="logout">
+                <li>
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+  <div class="container">
+    <div class="row pt-5">
+        <div class="col-6 offset-3">
+            
+            <form id="formTask" action="{% url 'tasks:task'  %}" autocomplete="off">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group validate">
+                            <label for="name">Task Name</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Enter name name">
+                            <small class="text-red text-muted mySpan"></small>
+                        </div>
+                        <div class="form-group validate">
+                            <label for="description">Description</label>
+                            <input type="text" name="description" class="form-control" id="description" placeholder="Enter task description">
+                            <small class="text-red text-muted mySpan"></small>
+                        </div>
+                        <div class="form-group validate">
+                            <label for="task_date">Task date</label>
+                            <input type="date" name="task_date" class="form-control" id="task_date">
+                            <small class="text-red text-muted mySpan"></small>
+                        </div>
+                        <div class="form-group validate">
+                            <label for="end_time">End time</label>
+                            <input type="time" name="end_time" class="form-control" id="end_time">
+                            <small class="text-red text-muted mySpan"></small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-primary pl-5 pr-5 btnSave">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script>
+    $("#formTask").on("submit", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var $this = $(this);
+        var valid = true;
+        $('#formTask input').each(function() {
+            let $this = $(this);
+            
+            if(!$this.val()) {
+                valid = false;
+                $this.parents('.validate').find('.mySpan').text('The '+$this.attr('name').replace(/[\_]+/g, ' ')+' field is required');
+            }
+        });
+    
+        if(valid){
+            $(".btnSave").text('Saving....').attr('disabled',true);
+            let data = $this.serialize();
+            $.ajax({
+                url: $this.attr("action"),
+                type: "POST",
+                data: data,
+                dataType: "json",
+                success: function(resp){
+                    if(resp.message == "success"){
+                        alert("Saved successful");
+                        $("#formTask")[0].reset();
+                    }
+                    else{
+                        alert(resp.message);
+                    }
+                    $(".btnSave").text('Save').attr('disabled',false);
+                },
+                error: function(resp){
+                    console.log("Something went wrong");
+                    $(".btnSave").text('Save').attr('disabled',false);
+                }
+            });
+        }
+        return false;
+    });
+</script>
+</body>
+</html>
