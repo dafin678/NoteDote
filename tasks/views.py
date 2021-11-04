@@ -14,7 +14,9 @@ class TaskView(View):
         if request.is_ajax():
             form = self.form_class(request.POST)
             if form.is_valid():
-                form.save()
+                fs= form.save(commit=False)
+                fs.user= request.user
+                fs.save()
                 return JsonResponse({"message": "success"})
             return JsonResponse({"message": "Validation failed"})
         return JsonResponse({"message": "Wrong request"})
