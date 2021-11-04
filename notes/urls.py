@@ -3,5 +3,5 @@ from .views import add_note, note_list
 
 urlpatterns = [
     path('add-note', add_note, name='add-note'),
-    path('', note_list, name='note-list')
+    path('notes', note_list, name='note-list')
 ]
