@@ -8,8 +8,8 @@ from .forms import ScheduleForm
 # @login_required(login_url='/admin/login')
 def index(request):
     # profile = UserProfile.objects.create(user=request.user)
-    # schedules = Weekly_schedule.objects.filter(user=request.user).order_by('start_time')
-    schedules = Weekly_schedule.objects.order_by('start_time')
+    schedules = Weekly_schedule.objects.filter(user=request.user).order_by('start_time')
+    # schedules = Weekly_schedule.objects.order_by('start_time')
     response = {'schedules': schedules}
     return render(request, 'schedule.html', response)
 
@@ -18,6 +18,9 @@ def add_schedule(request):
 
     if (form.is_valid and request.method == 'POST'):
         form.save()
+        fs= form.save(commit=False)
+        fs.user= request.user
+        fs.save()
         return HttpResponseRedirect('/weekly_schedule')
 
     response = {'form':form}
