@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.views import View
 from tasks.forms import TaskForm
 from tasks.models import Task
+from django.contrib.auth.models import User
 # from django.shortcuts import render, redirect
 # from django.template import loader
 
@@ -13,7 +14,9 @@ class TaskView(View):
         if request.is_ajax():
             form = self.form_class(request.POST)
             if form.is_valid():
-                form.save()
+                fs= form.save(commit=False)
+                fs.user= request.user
+                fs.save()
                 return JsonResponse({"message": "success"})
             return JsonResponse({"message": "Validation failed"})
         return JsonResponse({"message": "Wrong request"})
@@ -24,7 +27,7 @@ class TaskView(View):
 class ViewTaskView(View):
 
     def get(self,request, *args, **kwargs):
-        tasks = Task.objects.all()
+        tasks = Task.objects.filter(user=User.objects.get(username=request.user))
         return render(request, "view.html", {"tasks":tasks.order_by("end_time", "task_date")})
 
 class TaskDeleteView(View):
