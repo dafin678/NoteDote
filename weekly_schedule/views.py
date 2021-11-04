@@ -2,10 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Weekly_schedule
 from .forms import ScheduleForm
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-# @login_required(login_url='/admin/login')
+@login_required(login_url='/admin/login')
 def index(request):
     # profile = UserProfile.objects.create(user=request.user)
     schedules = Weekly_schedule.objects.filter(user=request.user).order_by('start_time')
@@ -13,11 +13,14 @@ def index(request):
     response = {'schedules': schedules}
     return render(request, 'schedule.html', response)
 
+@login_required(login_url='/admin/login/')
 def add_schedule(request):
     form = ScheduleForm(request.POST or None)
 
     if (form.is_valid and request.method == 'POST'):
-        form.save()
+        fs= form.save(commit=False)
+        fs.user= request.user
+        fs.save()
         return HttpResponseRedirect('/weekly_schedule')
 
     response = {'form':form}

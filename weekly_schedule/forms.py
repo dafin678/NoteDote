@@ -5,7 +5,7 @@ from django.forms.widgets import TimeInput
 class ScheduleForm(ModelForm):
     class Meta:
         model = Weekly_schedule
-        fields = '__all__'
+        fields = ['name', 'day', 'start_time', 'due_time']
 
         widgets = {
             'start_time': TimeInput(attrs={'type':'time'}),
