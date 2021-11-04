@@ -4,6 +4,7 @@ from django.views import View
 from tasks.forms import TaskForm
 from tasks.models import Task
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 # from django.shortcuts import render, redirect
 # from django.template import loader
 
@@ -25,13 +26,11 @@ class TaskView(View):
         return render(request, "form.html", {})
 
 class ViewTaskView(View):
-
     def get(self,request, *args, **kwargs):
         tasks = Task.objects.filter(user=User.objects.get(username=request.user))
         return render(request, "view.html", {"tasks":tasks.order_by("end_time", "task_date")})
 
 class TaskDeleteView(View):
-    
     def get(self,request, pk, *args, **kwargs):
         if request.is_ajax():
             task = Task.objects.get(pk=pk)
