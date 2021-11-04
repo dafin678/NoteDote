@@ -21,7 +21,6 @@ import profile_page.urls as profile
 import weekly_schedule.urls as weekly_schedule
 import personal_journal.urls as personal_journal
 import notes.urls as notes
-import pesanmotivasi.urls as pesanmotivasi
 import login_register.urls as login_register
 
 urlpatterns = [
@@ -32,6 +31,5 @@ urlpatterns = [
     path('weekly_schedule/', include(weekly_schedule)),
     path('login/', include(login_register)),
     path('personal_journal/', include(personal_journal)),
-    path('pesan_motivasi/', include(pesanmotivasi)),
     re_path(r'^$', index_to_do_list.as_view(), name='index')
 ]
