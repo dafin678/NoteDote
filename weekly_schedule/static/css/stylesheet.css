@@ -1,6 +1,9 @@
-body {
-    margin: 0;
-}
+.body-index{
+    background: #EADCA6;
+    min-height: 100%;
+    height: auto;
+    background-size:cover;
+  }
 
 #weakly-schedule-h1 {
     text-align: center;
