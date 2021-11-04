@@ -33,17 +33,3 @@ urlpatterns = [
     path('personal_journal/', include(personal_journal)),
     re_path(r'^$', index_to_do_list.as_view(), name='index')
 ]
-
-import to_do_list.urls as to_do_list
-from to_do_list.views import index as index_to_do_list
-import weekly_schedule.urls as weekly_schedule
-import profile_page.urls as profile
-import weekly_schedule.urls as weekly_schedule
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('to-do-list/', include(to_do_list)),
-    path('profile/', include(profile)),
-    path('weekly_schedule/', include(weekly_schedule)),
-    re_path(r'^$', index_to_do_list, name='index')
-]
