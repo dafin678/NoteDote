@@ -5,14 +5,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     {% static "" as baseUrl %}
     <script>
-        var loadImage = function(event) {
-            console.log("AA")
-            var output = document.getElementById('img');
-            output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function() {
-                URL.revokeObjectURL(output.src) // free memory
-            }
-        };
         var closeModal = function(event) {
             document.getElementById('id01').style.display='none';
         };
@@ -51,10 +43,6 @@
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{form.image_name.as_hidden}}
-            <div class = "image_form">
-                <img id="img" src="media/{{ form.image.value }}" width="250" height="250" >
-                <input type="file" name="image" accept="image/*" id="id_image" onchange="loadImage(event)" >
-            </div>
             <div class="mb-3">
                 <label for="id_name" class="form-label">Name</label>
                 <input type="text" class="form-control" name="name" id="id_name"  maxlength="100" required="" value={{ form.name.value }}>
@@ -74,8 +62,6 @@
         <span onclick='closeModal()' class="close">×</span>
         <div id="modal-content">
             <button type="button" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
-            <br>
-            <img src="{% static '1.jpg' %}", onlick='selectImage()'>
         </div>
     </div>
 
