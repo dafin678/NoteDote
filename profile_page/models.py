@@ -7,7 +7,7 @@ class Profile(models.Model):
     image = models.ImageField(default='profile_pics/default.jpg', upload_to='profile_pics')
     name = models.CharField(max_length=100)
     about = models.TextField(default="About Me")
-    
+    image_name = models.CharField(max_length=6, default = '1.jpg')
     
     def save(self, *args, **kwargs):
         super().save()
