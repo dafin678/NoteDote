@@ -1,0 +1,16 @@
+.wrapper{
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+.main-menu {
+    display:flex;
+    flex:0;
+}
+.content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    flex:1;
+}
