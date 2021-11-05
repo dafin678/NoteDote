@@ -4,18 +4,18 @@ from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileEditForm
-# @login_required(login_url='/admin/login/')
+@login_required(login_url='/admin/login/')
 def index(request):
     profile = Profile.objects.filter(user=User.objects.get (username=request.user))
     response = {'profiles': profile}
     return render(request, 'profile_index.html', response)
 
+@login_required(login_url='/admin/login/')
 def edit(request):
     if request.method == 'POST':
-        form = ProfileEditForm(request.POST, request.FILES, instance=request.user.profile) 
+        form = ProfileEditForm(request.POST, instance=request.user.profile) 
         if form.is_valid():
             form.save()
-            messages.success(request, f'Your account has been updated!')
             return redirect('/profile')
 
     else:

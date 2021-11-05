@@ -12,16 +12,27 @@
             document.getElementById('id01').style.display='block';
         };
         var generateImg = function(event) {
-            for (let i = 0; i < 10; i++) { 
+            for (let i = 1; i <= 10; i++) { 
                 var img = document.createElement("img");
-                img.src = "{{ baseUrl }}"+i + '.jpg';
-                img.className = 'modal_img';
-                img.onclick = function() { alert(i); closeModal();};
+                img.src = "{{ baseUrl }}img/" + i + '.jpg';
+                img.className = 'modal-img';
+                img.width = '250';
+                img.height ='250';
+                img.onclick = function() { selectImage(i + '.jpg'); closeModal();};
+                var wrap = document.createElement('div');
+                wrap.className = 'modal-container';
+                wrap.appendChild(img);
                 var src = document.getElementById("modal-content");
-                src.appendChild(img);
+                src.appendChild(wrap);
+                
             }
         }
-        {% comment %} var selectImage = function {% endcomment %}
+        var selectImage = function(image_name) {
+            var field = document.getElementById("id_image_name");
+            field.value = image_name;
+            var img = document.getElementById("profile-pic");
+            img.src = "{{ baseUrl }}img/" + image_name;
+        }
     </script>
 {% endblock head %}
 
@@ -43,25 +54,33 @@
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{form.image_name.as_hidden}}
+            <div class = "container" id = "image-box">
+                {% static "" as baseUrl %}
+                <img id = "profile-pic" src="{{ baseUrl }}img/{{form.image_name.value}}" class="rounded" wdith='250' height='250'>
+                <button type="button" class="btn btn-secondary btn-sm" onclick='openModal()'>Change</button>
+            </div>
             <div class="mb-3">
                 <label for="id_name" class="form-label">Name</label>
-                <input type="text" class="form-control" name="name" id="id_name"  maxlength="100" required="" value={{ form.name.value }}>
+                <input type="text" class="form-control" name="name" id="id_name"  maxlength="100" required="" value="{{ form.name.value }}">
             </div>
             <div class="mb-3">
                 <label for="id_about" class="form-label">About</label>
-                <textarea class="form-control" name="about" id="id_about" rows="3" required="" >{{form.about.value}}</textarea>
+                <textarea class="form-control" name="about" id="id_about" rows="9" required="" >{{form.about.value}}</textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-secondary">Submit</button>
         </form>
     </div>
 
+    
 
-    <button onclick='openModal()'>Open Modal</button>
-
-    <div id="id01" class="modal">
-        <span onclick='closeModal()' class="close">×</span>
-        <div id="modal-content">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
+    <div id="id01" class="modal" tabindex="-1" role="dialog" aria-labelledby="..." aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body" id="modal-content">
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" onclick='closeModal()'>Cancel</button>
+            </div>
         </div>
     </div>
 
