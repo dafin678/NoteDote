@@ -31,3 +31,8 @@ def add_schedule(request):
 
     response = {'form':form}
     return render(request, 'schedule_form.html', response)
+
+# def delete_schedule(request, id):
+#     schedule = Weekly_schedule.get(pk=id)
+#     schedule.delete()
+#     return redirect('/weekly_schedule')
