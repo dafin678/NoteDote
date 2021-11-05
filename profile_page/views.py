@@ -15,6 +15,7 @@ def edit(request):
     if request.method == 'POST':
         form = ProfileEditForm(request.POST, instance=request.user.profile) 
         if form.is_valid():
+            
             form.save()
             return redirect('/profile')
 
