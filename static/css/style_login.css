@@ -142,6 +142,12 @@ body {
     color: #181818;
 }
 
+.login-form-container {
+    font-family: "Titillium Web", sans-serif;
+    color: #c7c7c7;
+    font-size: 0.9em;
+}
+
 .prompt {
     margin: 15px 5px 15px 5px;
     font-family: "Titillium Web", sans-serif;
