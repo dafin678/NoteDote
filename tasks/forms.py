@@ -6,7 +6,7 @@ from .models import Task
 class TaskForm(forms.ModelForm):
 	class Meta:
 		model = Task
-		fields = "__all__"
+		fields = ['name', 'description', 'task_date', 'end_time']
 		error_messages = {
 			'required' : 'Please Fill All Required Informations'
 		}
