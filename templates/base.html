@@ -6,9 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Note Dote</title>
   {% block head %}
   {% endblock head %}
-  <title>Note Dote</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     {% endblock navbar %}
 
     <div class="body-container">
-      <div class="area"></div><nav class="main-menu">
+      <nav class="main-menu">
         <ul>
             <li>
                 <a href="/to-do-list">
@@ -75,7 +75,7 @@
         <ul class="logout">
             <li>
                 <a href="#">
-                      <i class="fa fa-power-off fa-2x"></i>
+                        <i class="fa fa-power-off fa-2x"></i>
                     <span class="nav-text">
                         Logout
                     </span>
@@ -83,6 +83,7 @@
             </li>  
         </ul>
     </nav>
+    
 
     {% block content %}
     {% endblock %}
