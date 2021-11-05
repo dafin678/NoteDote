@@ -8,8 +8,8 @@
 }
 
 body {
-    background-color: #EAF6F6;
-    color: #64bcbc;
+    background-color: #000;
+    color: #fff;
 }
 
 .max-width{
@@ -32,7 +32,7 @@ body {
 }
 
 .navbar .menu li a{
-    color: #64bcbc;
+    color: #fff;
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
@@ -49,7 +49,7 @@ body {
 }
 
 .navbar .logo a{
-    color: #64bcbc;
+    color: #fff;
     font-size: 35px;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -98,8 +98,8 @@ body {
 .navbar ul li:hover .sub-menu{
     display: inline-block;
     position: absolute;
-    background-color: #EAF6F6;
-    color: #64bcbc;
+    background-color: black;
+    color: #fff;
    
     
 }
@@ -120,8 +120,14 @@ body {
     max-width: 900px; 
 }  */
 
+.body-index{
+    background-color: black;
+    text-align: justify;
+}
+
 .media .form-input .input{
     width: 100.2%;
+    /* width: 100%; */
 }
 
 .django-ckeditor-widget{
@@ -130,7 +136,7 @@ body {
 
 .button-1{
     padding: 5px 25px;
-    background:#EAF6F6;
+    background:black;
     color: #fff;
     border-radius: 5px;
     font-family: 'Ubuntu', sans-serif;
@@ -163,13 +169,3 @@ body {
     margin: auto;
     position: relative;
 } */
-
-
-
-
-
-
-
-
-
-

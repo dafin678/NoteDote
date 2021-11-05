@@ -26,13 +26,13 @@ Banyaknya masalah yang dialami oleh sebagian mahasiswa yang sulit dalam menentuk
 
 
 ## Daftar Modul:
-1. Login (form)
-2. Sign up  (form)
-3. Homepage - cards yang isinya deadline todo, sort dari yang paling deket deadlinenya
-4. Profile Page - Settings (Username, password, profile picture)
-5. Add todo (form, deadline, link notes nya)
-6. Add Notes (form)
-7. View Notes (List)
+1. Login & Sign up (form login) - Alif
+2. Profile Page - Settings (Username, password, profile picture) - Josh
+3. To Do List  (form, deadline, link notes nya)- Hanip
+4. Notes (form, isi notes) - Ilman
+5. Personal Journal (form, isi journal) - Dafin
+6. Weekly Schedule (form, schedule mingguan) - Rizky
+7. Motivation (form, isi pesan motivasi) - Danang
 
 ## Peran pengguna (Persona)
 
