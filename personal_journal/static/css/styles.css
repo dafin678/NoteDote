@@ -120,6 +120,10 @@ body {
     max-width: 900px; 
 }  */
 
+.body-index{
+    background-color: black;
+}
+
 .media .form-input .input{
     width: 100.2%;
     /* width: 100%; */
