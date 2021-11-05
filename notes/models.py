@@ -4,4 +4,5 @@ from django.db import models
 class notes(models.Model):
     author = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
+    date_created = models.Datefield(null=True)
     message = models.TextField(default='', blank = True)
