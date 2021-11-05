@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'login_register',
     'notes',
     'personal_journal',
+    'pesanmotivasi',
     'ckeditor',
     # 'rest_framework'
 ]
