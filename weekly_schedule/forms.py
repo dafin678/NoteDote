@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from .models import Weekly_schedule
-from django.forms.widgets import TimeInput
+from django.forms.widgets import TimeInput, TextInput
+from django import forms
 
 class ScheduleForm(ModelForm):
     class Meta:
@@ -10,4 +11,5 @@ class ScheduleForm(ModelForm):
         widgets = {
             'start_time': TimeInput(attrs={'type':'time'}),
             'due_time': TimeInput(attrs={'type':'time'}),
+            'day': forms.Select(attrs={'id':'day'})
         }

@@ -1,6 +1,9 @@
-body {
-    margin: 0;
-}
+.body-index{
+    background: #EADCA6;
+    min-height: 100%;
+    height: auto;
+    background-size:cover;
+  }
 
 #weakly-schedule-h1 {
     text-align: center;
@@ -18,6 +21,8 @@ body {
     width: fit-content;
     overflow-y: auto;
     margin-left: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
 }
 
 .card-title {
@@ -28,6 +33,10 @@ body {
 .card-subtitle {
     text-align: center;
 }
+
+/* .last-card {
+    margin-top: 10px;
+} */
 
 .complete {
     border-radius: 0.25rem;
@@ -41,11 +50,14 @@ body {
 }
 
 .row {
-    /* margin: auto; */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .col {
     /* margin: auto 30px; */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .navbar {

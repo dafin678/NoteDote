@@ -36,14 +36,14 @@
                         <div class="card-body">
                             <h5 class="card-title">Monday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
-                            {% if schedules %}
+                            {% if day1 %}
                             <ul id="incomplete-schedule">
-                                {% for schedule in schedules %}
+                                {% for schedule in day1 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox">
                                         <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label>
-                                        <!-- <button class="detail">Detail</button> -->
+                                        <button class="edit">Edit</button>
                                         <button class="complete">Complete</button>
                                     </li>
                                 {% endfor %}
@@ -61,14 +61,14 @@
                         <div class="card-body">
                             <h5 class="card-title">Tuesday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
-                            {% if schedules %}
+                            {% if day2 %}
                             <ul id="incomplete-schedule">
-                                {% for schedule in schedules %}
+                                {% for schedule in day2 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox">
                                         <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label>
-                                        <!-- <button class="detail">Detail</button> -->
+                                        <button class="edit">Edit</button>
                                         <button class="complete">Complete</button>
                                     </li>
                                 {% endfor %}
@@ -86,14 +86,14 @@
                         <div class="card-body">
                             <h5 class="card-title">Wednesday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
-                            {% if schedules %}
+                            {% if day3 %}
                             <ul id="incomplete-schedule">
-                                {% for schedule in schedules %}
+                                {% for schedule in day3 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox">
                                         <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label>
-                                        <!-- <button class="detail">Detail</button> -->
+                                        <button class="edit">Edit</button>
                                         <button class="complete">Complete</button>
                                     </li>
                                 {% endfor %}
@@ -112,14 +112,14 @@
                         <div class="card-body">
                             <h5 class="card-title">Thursday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
-                            {% if schedules %}
+                            {% if day4 %}
                             <ul id="incomplete-schedule">
-                                {% for schedule in schedules %}
+                                {% for schedule in day4 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox">
                                         <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label>
-                                        <!-- <button class="detail">Detail</button> -->
+                                        <button class="edit">Edit</button>
                                         <button class="complete">Complete</button>
                                     </li>
                                 {% endfor %}
@@ -137,14 +137,14 @@
                         <div class="card-body">
                             <h5 class="card-title">Friday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
-                            {% if schedules %}
+                            {% if day5 %}
                             <ul id="incomplete-schedule">
-                                {% for schedule in schedules %}
+                                {% for schedule in day5 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox">
                                         <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label>
-                                        <!-- <button class="detail">Detail</button> -->
+                                        <button class="edit">Edit</button>
                                         <button class="complete">Complete</button>
                                     </li>
                                 {% endfor %}
@@ -162,14 +162,14 @@
                         <div class="card-body">
                             <h5 class="card-title">Saturday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
-                            {% if schedules %}
+                            {% if day6 %}
                             <ul id="incomplete-schedule">
-                                {% for schedule in schedules %}
+                                {% for schedule in day6 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox">
                                         <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label>
-                                        <!-- <button class="detail">Detail</button> -->
+                                        <button class="edit">Edit</button>
                                         <button class="complete">Complete</button>
                                     </li>
                                 {% endfor %}
@@ -188,14 +188,14 @@
                         <div class="card-body">
                             <h5 class="card-title">Sunday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
-                            {% if schedules %}
+                            {% if day7 %}
                             <ul id="incomplete-schedule">
-                                {% for schedule in schedules %}
+                                {% for schedule in day7 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox">
                                         <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label>
-                                        <!-- <button class="detail">Detail</button> -->
+                                        <button class="edit">Edit</button>
                                         <button class="complete">Complete</button>
                                     </li>
                                 {% endfor %}

@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import index, add_schedule
+from .views import list_schedule, add_schedule
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', list_schedule.as_view(), name='list_schedule'),
     path('add-schedule/', add_schedule, name='add_schedule'),
 ]
