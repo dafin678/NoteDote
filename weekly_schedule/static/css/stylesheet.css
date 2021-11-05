@@ -3,24 +3,24 @@
     min-height: 100%;
     height: auto;
     background-size:cover;
-  }
+}
+
+.body-container {
+    padding: 0;
+}
 
 #weakly-schedule-h1 {
     text-align: center;
     color: #87AAAA;
     /* margin-bottom: 30px */
-    margin-top: -100px;
-}
-
-#navbar-schedule {
-    margin: auto;
+    /* margin-top: -100px; */
 }
 
 .card {
     height: 400px;
-    width: fit-content;
+    /* width: fit-content; */
     overflow-y: auto;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     /* margin-top: 10px;
     margin-bottom: 10px; */
 }
@@ -34,9 +34,14 @@
     text-align: center;
 }
 
-/* .last-card {
-    margin-top: 10px;
-} */
+.last-card {
+    width: calc(100%/3);
+}
+
+.cont-body {
+    /* margin-top: 100px; */
+    /* padding-top: 160px; */
+}
 
 .complete {
     border-radius: 0.25rem;
@@ -60,18 +65,13 @@
     margin-bottom: 20px;
 }
 
-.navbar {
-    text-align: center;
-    align-items: center;
-}
-
 header {
   height: 65px;
   width: 100%;
   top: 0;
   background-color:#343a40!important;
-  /* position :fixed;
-  overflow: hidden; */
+  /* position :fixed; */
+  /* overflow: hidden; */
   position :relative;
   margin-top: 0px;
   margin-bottom: 100px;
@@ -125,3 +125,7 @@ form {
     background-color: #3D56B2;
     color: white;
 }
+
+.strike-through{
+    text-decoration: line-through;
+  }

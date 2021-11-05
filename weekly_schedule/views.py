@@ -1,3 +1,4 @@
+from django.http.response import JsonResponse
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Weekly_schedule
@@ -30,5 +31,3 @@ def add_schedule(request):
 
     response = {'form':form}
     return render(request, 'schedule_form.html', response)
-
-# def 
