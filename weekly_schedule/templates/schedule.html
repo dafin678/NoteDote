@@ -30,7 +30,7 @@
         <!-- <div class="row align-items-center">   -->
             <div class="row mb-3">
                 <div class="col">       
-                    <div class="card text-white bg-dark">
+                    <div class="card text-white bg-dark" id="monday">
                         <div class="card-body">
                             <h5 class="card-title">Monday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
@@ -39,7 +39,7 @@
                                 {% for schedule in day1 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox" class="checkbox" cek=false>
-                                        <label class="schedule-name">{{ schedule.name }}</label><br>
+                                        <label class="schedule-name" id="schedule-{{ schedule.id }}">{{ schedule.name }}</label><br>
                                         <label class="time">{{ schedule.start_time }} - {{ schedule.due_time }}</label><br>
                                         <button class="edit">Edit</button>
                                         <button class="complete-btn" id={{schedule.id}}>Complete</button>
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="card text-white bg-dark">
+                    <div class="card text-white bg-dark" id="tuesday">
                         <div class="card-body">
                             <h5 class="card-title">Tuesday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
@@ -64,7 +64,7 @@
                                 {% for schedule in day2 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox" class="checkbox" cek=false>
-                                        <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
+                                        <label class="schedule-name" id="schedule-{{ schedule.id }}">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label><br>
                                         <button class="edit">Edit</button>
                                         <button class="complete-btn">Complete</button>
@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="card text-white bg-dark">
+                    <div class="card text-white bg-dark" id="wednesday">
                         <div class="card-body">
                             <h5 class="card-title">Wednesday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
@@ -89,7 +89,7 @@
                                 {% for schedule in day3 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox" class="checkbox" cek=false>
-                                        <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
+                                        <label class="schedule-name" id="schedule-{{ schedule.id }}">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label><br>
                                         <button class="edit">Edit</button>
                                         <button class="complete-btn">Complete</button>
@@ -106,7 +106,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="card text-white bg-dark">
+                    <div class="card text-white bg-dark" id="thursday">
                         <div class="card-body">
                             <h5 class="card-title">Thursday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
@@ -115,7 +115,7 @@
                                 {% for schedule in day4 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox" class="checkbox" cek=false>
-                                        <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
+                                        <label class="schedule-name" id="schedule-{{ schedule.id }}">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label><br>
                                         <button class="edit">Edit</button>
                                         <button class="complete-btn">Complete</button>
@@ -131,7 +131,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="card text-white bg-dark">
+                    <div class="card text-white bg-dark" id="friday">
                         <div class="card-body">
                             <h5 class="card-title">Friday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
@@ -140,7 +140,7 @@
                                 {% for schedule in day5 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox" class="checkbox" cek=false>
-                                        <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
+                                        <label class="schedule-name" id="schedule-{{ schedule.id }}">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label><br>
                                         <button class="edit">Edit</button>
                                         <button class="complete-btn">Complete</button>
@@ -156,7 +156,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="card text-white bg-dark">
+                    <div class="card text-white bg-dark" id="saturday">
                         <div class="card-body">
                             <h5 class="card-title">Saturday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
@@ -165,7 +165,7 @@
                                 {% for schedule in day6 %}
                                     <li class="li-schedule" style="list-style: none;">
                                         <input type="checkbox" class="checkbox" cek=false>
-                                        <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
+                                        <label class="schedule-name" id="schedule-{{ schedule.id }}">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label><br>
                                         <button class="edit">Edit</button>
                                         <button class="complete-btn">Complete</button>
@@ -182,7 +182,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="card last-card mx-auto text-white bg-dark">
+                    <div class="card last-card mx-auto text-white bg-dark" id="sunday">
                         <div class="card-body sunday">
                             <h5 class="card-title">Sunday</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Schedule</h6>
@@ -191,7 +191,7 @@
                                 {% for schedule in day7 %}
                                     <li class="li-schedule" id="no-{{ schedule.id }}" style="list-style: none;">
                                         <input type="checkbox" class="checkbox" cek=false>
-                                        <label class="schedule-name" style="width: 150px;">{{ schedule.name }}</label><br>
+                                        <label class="schedule-name" id="schedule-{{ schedule.id }}">{{ schedule.name }}</label><br>
                                         <label class="time" style="width: 150px;">{{ schedule.start_time }} - {{ schedule.due_time }}</label><br>
                                         <button class="edit">Edit</button>
                                         <button class="complete-btn">Complete</button>

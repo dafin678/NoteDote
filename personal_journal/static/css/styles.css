@@ -120,8 +120,14 @@ body {
     max-width: 900px; 
 }  */
 
+.body-index{
+    background-color: black;
+    /* text-align: justify; */
+}
+
 .media .form-input .input{
     width: 100.2%;
+    /* width: 100%; */
 }
 
 .django-ckeditor-widget{
@@ -163,13 +169,3 @@ body {
     margin: auto;
     position: relative;
 } */
-
-
-
-
-
-
-
-
-
-

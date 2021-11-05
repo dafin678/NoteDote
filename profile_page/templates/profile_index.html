@@ -8,14 +8,9 @@
 
 {% block navbar %}
     <header>
-        <div class="container">
-            <div class="header-left">
-                Profile Page
-            </div>
             <div class="header-right">
                 <a href="edit"><b>Edit Profile</b></a>
             </div>
-        </div>
     </header> 
 {% endblock navbar %}
 
@@ -24,12 +19,10 @@
 {% block content %}
 
     {% for profile in profiles %}
-    {% static "" as baseUrl %}
-    
 
     <div class="profile-card">
         <div class="img-container">
-            <img src="{{ baseUrl }}img/{{profile.image_name}}" class = "profile-pic" id = "full-size">
+            <img src="/static/img/{{profile.image_name}}" class = "profile-pic" id = "full-size">
         </div>
         <div class = "text-container">
             <h1 class = "name">{{ profile.name }}</h1>

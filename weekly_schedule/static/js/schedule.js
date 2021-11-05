@@ -2,13 +2,11 @@ $(document).ready(function(){
     $(".checkbox").change(function(){
         var data = $(this);
         if ($(this).attr('cek') == 'false'){
-            // $(".schedule-name").css("text-decoration", "line-through")
             $(".schedule-name").addClass('strike-through');
             $(this).attr('cek','true');
             console.log('line-through');
         } else{
             $(".schedule-name").removeClass('strike-through')
-            // $(".schedule-name").css("text-decoration", "line-through")
             console.log('not line-through');
             $(this).attr('cek','false');
         }
