@@ -7,5 +7,5 @@ from .views import index, edit
 urlpatterns = [
     path('', index, name='index'),
     path('edit', edit, name='edit'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
