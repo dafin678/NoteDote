@@ -3,7 +3,6 @@
 {% block head %}
     <link rel="stylesheet" type="text/css" href= "{% static 'css/profilepage.css'%}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    {% static "" as baseUrl %}
     <script>
         var closeModal = function(event) {
             document.getElementById('id01').style.display='none';
@@ -12,11 +11,11 @@
             document.getElementById('id01').style.display='block';
         };
         var generateImg = function(event) {
-            fetchJSONFile('{{ baseUrl }}img-name.json', function(data){
+            fetchJSONFile('/static/img-name.json', function(data){
                 var file_names = data.files;
                 file_names.forEach((file_name) => {
                     var img = document.createElement("img");
-                    img.src = "{{ baseUrl }}img/" + file_name;
+                    img.src = "/static/img/" + file_name;
                     img.className = 'modal-img';
                     img.width = '250';
                     img.height ='250';
@@ -33,7 +32,7 @@
             var field = document.getElementById("id_image_name");
             field.value = image_name;
             var img = document.getElementById("profile-pic");
-            img.src = "{{ baseUrl }}img/" + image_name;
+            img.src = "/static/img/" + image_name;
         }
         function fetchJSONFile(path, callback) {
             var httpRequest = new XMLHttpRequest();
@@ -65,8 +64,7 @@
             {% csrf_token %}
             {{form.image_name.as_hidden}}
             <div class = "container" id = "image-box">
-                {% static "" as baseUrl %}
-                <img id = "profile-pic" src="{{ baseUrl }}img/{{form.image_name.value}}" class="rounded" wdith='250' height='250'>
+                <img id = "profile-pic" src="/static/img/{{form.image_name.value}}" class="rounded" wdith='250' height='250'>
                 <button type="button" class="btn btn-secondary btn-sm" onclick='openModal()'>Change</button>
             </div>
             <div class="mb-3">
