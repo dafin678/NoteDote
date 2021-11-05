@@ -110,6 +110,13 @@ DATABASES = {
     }
 }
 
+# fixed CKEditor size
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': '100%'
+    },
+}
+
 # Set database settings automatically using DATABASE_URL.
 if PRODUCTION:
     DATABASES['default'] = dj_database_url.config(

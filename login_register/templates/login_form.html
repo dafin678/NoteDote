@@ -3,28 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type='text/css' href="{% static 'css/style_login_register.css' %}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/style_login.css' %}">
+    <link rel="shortcut icon" type='image/png' href="{% static 'notedote_logo.png' %}">
     <title>NoteDote | Login</title>   
-    <div class="nav-container">
-       <nav>
-            <div class="right-menu">
-                <a href="#">Shop</a>
-                <a href="#">Blog</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="logo">
-            <img src ="{%static 'notedote_logo.png' %}">
-            </div>
-        </nav>
-    <div>     
 </head>
+    <header>
+        <img class="logo" src="{% static 'notedote_logo.png' %}">
+        <div class="nav">
+        <nav>
+        <ul class="menu">
+            <li class="login"><a href="#">Login</a></li>
+            <li class="sign up"><a class="active" href="sign up">Sign Up</a></li>
+        </ul>
+        </nav>
+        <div>     
+    </header>
     <body>
+        <div class="box-container">
+        <h1 class="title"><b>notedote.</b></h1>
+        <h1 class="tagline">Anytime. Anywhere.<h1>
         <div class="boxes">
-            <h1 id="login_title">Login</h1>
+            <h1 id="login_title">Login to your Notedote account</h1>
             <h2 class="prompt">Username</h2>
             <h2 class="prompt">Password</h2>
-            <p>Don't have an account yet? Register</p>
+            <h2 class="sign-button"><a href="#">Login</a></h2>
+            <p class="reg-option">Don't have an account? <a href="#">Sign up</a></p>
         </div> 
+        </div>
+        <div class="footer">
+        <div class="footer-left">
+        <h1 class="project-name">Kelompok F07 PBP 2021</h1>
+        <p class="members">Danang Widyorukmantiyoro A. S (2006597203),  Farhan Hanif Saefuddin (2006596642), 
+        Josh Steven Lasiman (2006596131),  Muhammad Dhafin Fauzan (2006596421), <br>Muhammad Ilman Nafi'an (2006597134),  
+        Nurkhalif Rizqi Fatiha (2006597071),  Rizky Juniastiar (2006596043).</p>
+        </div>
+        <div class="footer-right">
+        <p class="powered">Powered by</p>
+        <img class="django-logo" src="{% static 'django-logo-white-crop.png'%}">
+        </div>
+        </div>
     </body>
 </html>

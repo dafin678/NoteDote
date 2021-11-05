@@ -30,7 +30,7 @@ urlpatterns = [
     path('tasks/',include(tasks)),
     path('profile/', include(profile)),
     path('weekly_schedule/', include(weekly_schedule)),
-    path('login/', include(login_register)),
+    path('account/', include(login_register)),
     path('personal_journal/', include(personal_journal)),
     path('motivasi/', include(pesan_motivasi)),
     re_path(r'^$', index_to_do_list.as_view(), name='index')
