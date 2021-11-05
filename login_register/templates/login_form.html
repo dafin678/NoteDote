@@ -25,9 +25,13 @@
             <div class="box-container">
                 <div class="boxes">
                     <h1 id="login-title">Login to your Notedote account</h1>
-                    <h2 class="prompt">Username</h2>
-                    <h2 class="prompt">Password</h2>
-                    <h2 class="sign-button"><a href="#">Login</a></h2>
+                    <form method="POST" action="">
+                        <input type="text" name="username" placeholder="username">
+                        <input type="text" name="password" placeholder="password">
+                    </form>
+                    {% comment %} <h2 class="prompt">Username</h2>
+                    <h2 class="prompt">Password</h2> {% endcomment %}
+                    <button="submit" class="sign-button">Login</button>
                     <p class="reg-option">Don't have an account? <a href="/../account/signup/">Sign up</a></p>
                 </div> 
             </div>
