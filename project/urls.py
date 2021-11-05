@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path, re_path
-from tasks.views import ViewTaskView as index_to_do_list
+from login_register.views import login as index
 import tasks.urls as tasks
 import profile_page.urls as profile
 import weekly_schedule.urls as weekly_schedule
@@ -33,5 +33,5 @@ urlpatterns = [
     path('account/', include(login_register)),
     path('personal_journal/', include(personal_journal)),
     path('motivasi/', include(pesan_motivasi)),
-    re_path(r'^$', index_to_do_list.as_view(), name='index')
+    re_path(r'^$', index, name='index')
 ]
