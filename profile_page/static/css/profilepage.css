@@ -1,0 +1,127 @@
+header {
+    height: 65px;
+    width: 100%;
+    top: 0;
+    background-color:#343a40!important;
+    position :relative;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+.header-left {
+    line-height: 65px;
+    padding: 0 30px;
+    color: white;
+    display: block;
+    float: left;
+    transition: all 0.5s; 
+    text-decoration: none;
+    font-size:20px;
+}
+.header-right {
+    float: right;
+    margin-right: -80px;
+}
+.header-right a {
+    line-height: 65px;
+    padding: 0 30px;
+    color: white;
+    display: block;
+    float: left;
+    transition: all 0.5s; 
+    text-decoration: none;
+    font-size:20px;
+}
+
+.form-container {
+    margin:auto;
+    width: 40%;
+    font-size:20px;
+}
+
+.mb-3 input, .mb-3 textarea{
+    font-size:20px;
+}
+
+#image-box {
+    margin:auto;
+    text-align: center;
+}
+
+.modal-container {
+    margin: 3px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 19%;
+}
+
+.modal-container:hover {
+    border: 3px solid #777;
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+}
+
+.profile-pic {
+    border: 3px solid #777;
+    
+    
+}
+ #full-size {
+     width: 100%;
+ }
+
+.body-container {
+    width:100%;
+    height:90%;
+}
+
+.area {
+    width:0%;
+    height:0%;
+    margin:none;
+}
+
+.profile-card {
+    width: 70%;
+    height: 70%;
+    position: relative;
+    margin-left:15%;
+    border-radius: 50px;
+    box-shadow: 1px 1px 40px rgba(black, 0.1);
+}
+
+.img-container {
+    float:left;
+    width: 58%;
+}
+
+.text-container{
+    float:right;
+    width : 40%;
+    height: 100%;
+    
+}
+
+.about-body {
+    font-family :'Libre Franklin', sans-serif;
+    float : bottom;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.about-label {
+    margin-top:10%;
+    margin-bottom:10px;
+    line-height: normal;
+    font-size: 1em;
+    text-align: left;
+}
+.name {
+    font-weight: 800;
+    color : #505050;
+    font-family: Roboto, sans-serif;
+    
+}

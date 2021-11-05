@@ -1,24 +1,88 @@
 {% extends "base.html" %}
+{% load static %}
 {% block head %}
+    <link rel="stylesheet" type="text/css" href= "{% static 'css/profilepage.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    {% static "" as baseUrl %}
     <script>
-        var loadImage = function(event) {
-            console.log("AA")
-            var output = document.getElementById('img');
-            output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function() {
-                URL.revokeObjectURL(output.src) // free memory
-            }
+        var closeModal = function(event) {
+            document.getElementById('id01').style.display='none';
         };
+        var openModal = function(event) {
+            document.getElementById('id01').style.display='block';
+        };
+        var generateImg = function(event) {
+            for (let i = 1; i <= 10; i++) { 
+                var img = document.createElement("img");
+                img.src = "{{ baseUrl }}img/" + i + '.jpg';
+                img.className = 'modal-img';
+                img.width = '250';
+                img.height ='250';
+                img.onclick = function() { selectImage(i + '.jpg'); closeModal();};
+                var wrap = document.createElement('div');
+                wrap.className = 'modal-container';
+                wrap.appendChild(img);
+                var src = document.getElementById("modal-content");
+                src.appendChild(wrap);
+                
+            }
+        }
+        var selectImage = function(image_name) {
+            var field = document.getElementById("id_image_name");
+            field.value = image_name;
+            var img = document.getElementById("profile-pic");
+            img.src = "{{ baseUrl }}img/" + image_name;
+        }
     </script>
 {% endblock head %}
-{% block content %}
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.name }}
-        {{ form.about }}
-        <input type="file" name="image" accept="image/*" id="id_image" onchange="loadImage(event)" >
-        <img id="img" src="media/{{ form.image.value }}" width="250" height="250" >
-        <button type="submit">Update</button>
-    </form>
 
+{% block navbar %}
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <b> Profile Page </b>
+            </div>
+            <div class="header-right">
+                <a href="/profile"><b>Your Profile</b></a>
+            </div>
+        </div>
+    </header> 
+{% endblock navbar %}
+
+{% block content %}
+    <div class="form-container">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.image_name.as_hidden}}
+            <div class = "container" id = "image-box">
+                {% static "" as baseUrl %}
+                <img id = "profile-pic" src="{{ baseUrl }}img/{{form.image_name.value}}" class="rounded" wdith='250' height='250'>
+                <button type="button" class="btn btn-secondary btn-sm" onclick='openModal()'>Change</button>
+            </div>
+            <div class="mb-3">
+                <label for="id_name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="id_name"  maxlength="100" required="" value="{{ form.name.value }}">
+            </div>
+            <div class="mb-3">
+                <label for="id_about" class="form-label">About</label>
+                <textarea class="form-control" name="about" id="id_about" rows="9" required="" >{{form.about.value}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary">Submit</button>
+        </form>
+    </div>
+
+    
+
+    <div id="id01" class="modal" tabindex="-1" role="dialog" aria-labelledby="..." aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body" id="modal-content">
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" onclick='closeModal()'>Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script> generateImg(); </script>
 {% endblock content %}

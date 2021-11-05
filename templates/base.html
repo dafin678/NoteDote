@@ -6,9 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Note Dote</title>
   {% block head %}
   {% endblock head %}
-  <title>Note Dote</title>
 </head>
 
 <body>
@@ -18,73 +18,73 @@
         {% endblock navbar %}
 
         <div class="body-container">
-        <div class="area"></div><nav class="main-menu">
-            <ul>
-                <li>
-                    <a href="/tasks">
-                        <i class="fa fa-home fa-2x"></i>
-                        <span class="nav-text">
-                            Dashboard
-                        </span>
-                    </a>
-                
-                </li>
-                <li class="has-subnav">
-                    <a href="/personal_journal">
-                        <i class="fa fa-laptop fa-2x"></i>
-                        <span class="nav-text">
-                            Personal Journal
-                        </span>
-                    </a>
+            <div class="area"></div><nav class="main-menu">
+                <ul>
+                    <li>
+                        <a href="/tasks">
+                            <i class="fa fa-home fa-2x"></i>
+                            <span class="nav-text">
+                                Dashboard
+                            </span>
+                        </a>
                     
-                </li>
-                <li class="has-subnav">
-                    <a href="/notes">
-                        <i class="fa fa-folder-open fa-2x"></i>
-                        <span class="nav-text">
-                            Notes
-                        </span>
-                    </a>
-                    
-                </li>
-                <li>
-                    <a href="/motivasi">
-                        <i class="fa fa-font fa-2x"></i>
-                        <span class="nav-text">
-                            Quotes
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/weekly_schedule">
-                        <i class="fa fa-table fa-2x"></i>
-                        <span class="nav-text">
-                            Weekly Schedule
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/profile">
-                        <i class="fa fa-info fa-2x"></i>
-                        <span class="nav-text">
-                            Profile
-                        </span>
-                    </a>
-                </li>
-            </ul>
+                    </li>
+                    <li class="has-subnav">
+                        <a href="/personal_journal">
+                            <i class="fa fa-laptop fa-2x"></i>
+                            <span class="nav-text">
+                                Personal Journal
+                            </span>
+                        </a>
+                        
+                    </li>
+                    <li class="has-subnav">
+                        <a href="/notes">
+                            <i class="fa fa-folder-open fa-2x"></i>
+                            <span class="nav-text">
+                                Notes
+                            </span>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="/motivasi">
+                            <i class="fa fa-font fa-2x"></i>
+                            <span class="nav-text">
+                                Quotes
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/weekly_schedule">
+                            <i class="fa fa-table fa-2x"></i>
+                            <span class="nav-text">
+                                Weekly Schedule
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile">
+                            <i class="fa fa-info fa-2x"></i>
+                            <span class="nav-text">
+                                Profile
+                            </span>
+                        </a>
+                    </li>
+                </ul>
 
-            <ul class="logout">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-power-off fa-2x"></i>
-                        <span class="nav-text">
-                            Logout
-                        </span>
-                    </a>
-                </li>  
-            </ul>
-        </nav>
-    </div>
+                <ul class="logout">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-power-off fa-2x"></i>
+                            <span class="nav-text">
+                                Logout
+                            </span>
+                        </a>
+                    </li>  
+                </ul>
+            </nav>
+        </div>
     {% block content %}
     {% endblock %}
   </body>
