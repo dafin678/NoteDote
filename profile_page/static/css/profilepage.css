@@ -8,21 +8,12 @@ header {
     margin-bottom: 0px;
   }
 
-.header-left {
-    line-height: 65px;
-    padding: 0 30px;
-    color: white;
-    display: block;
-    float: left;
-    transition: all 0.5s; 
-    text-decoration: none;
-    font-size:20px;
-}
-.header-right {
+  .header-right {
     float: right;
-    margin-right: -80px;
-}
-.header-right a {
+    margin-right: 20%;
+  }
+  .header-right a {
+    display: flex;
     line-height: 65px;
     padding: 0 30px;
     color: white;
@@ -31,6 +22,9 @@ header {
     transition: all 0.5s; 
     text-decoration: none;
     font-size:20px;
+  }
+  .header-right a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .form-container {
