@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'personal_journal',
     'pesanmotivasi',
     'ckeditor',
-    # 'rest_framework'
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
