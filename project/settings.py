@@ -63,7 +63,13 @@ INSTALLED_APPS = [
     'personal_journal',
     'pesanmotivasi',
     'ckeditor',
+<<<<<<< HEAD
     'rest_framework'
+=======
+    # 'rest_framework'
+    "authentication",
+    "corsheaders",
+>>>>>>> 21e23f18c3e34957ee5ee0b68f6e8a09f862fb9a
 ]
 
 MIDDLEWARE = [
@@ -75,6 +81,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -185,3 +192,12 @@ for directory in [*STATICFILES_DIRS, STATIC_ROOT]:
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
