@@ -23,6 +23,7 @@ import personal_journal.urls as personal_journal
 import pesanmotivasi.urls as pesan_motivasi
 import notes.urls as notes
 import login_register.urls as login_register
+import authentication.urls as auth
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,5 +34,6 @@ urlpatterns = [
     path('account/', include(login_register)),
     path('personal_journal/', include(personal_journal)),
     path('motivasi/', include(pesan_motivasi)),
-    re_path(r'^$', index, name='index')
+    path('auth/', include(auth)),
+    re_path(r'^$', index, name='index'),
 ]
