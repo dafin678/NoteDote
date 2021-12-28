@@ -63,13 +63,9 @@ INSTALLED_APPS = [
     'personal_journal',
     'pesanmotivasi',
     'ckeditor',
-<<<<<<< HEAD
-    'rest_framework'
-=======
     # 'rest_framework'
     "authentication",
     "corsheaders",
->>>>>>> 21e23f18c3e34957ee5ee0b68f6e8a09f862fb9a
 ]
 
 MIDDLEWARE = [
