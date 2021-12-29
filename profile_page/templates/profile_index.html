@@ -1,10 +1,37 @@
 {% extends "base.html" %}
-{% block content %}
-    {% for profile in profiles %}
-    <h1>{{ profile.name }}</h1>
-    <h1>{{ profile.about }}</h1>
-    <img src="/profile{{profile.image.url}}">
-    
-    {% endfor %}
+{% load static %}
 
+{% block head %}
+    <link rel="stylesheet" type="text/css" href= "{% static 'css/profilepage.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+{% endblock head %}
+
+{% block navbar %}
+    <header>
+            <div class="header-right">
+                <a href="edit"><b>Edit Profile</b></a>
+            </div>
+    </header> 
+{% endblock navbar %}
+
+
+
+{% block content %}
+
+    {% for profile in profiles %}
+
+    <div class="profile-card">
+        <div class="img-container">
+            <img src="/static/img/{{profile.image_name}}" class = "profile-pic" id = "full-size">
+        </div>
+        <div class = "text-container">
+            <h1 class = "name">{{ profile.name }}</h1>
+            <p class="about-label">About</p>
+            <div class="about-body">
+                {{ profile.about }}
+            </div>
+        </div>
+    </div>
+    </div>
+  {% endfor %}
 {% endblock content %}

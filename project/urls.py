@@ -15,21 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path, re_path
-from tasks.views import ViewTaskView as index_to_do_list
+from login_register.views import login as index
 import tasks.urls as tasks
 import profile_page.urls as profile
 import weekly_schedule.urls as weekly_schedule
 import personal_journal.urls as personal_journal
+import pesanmotivasi.urls as pesan_motivasi
 import notes.urls as notes
 import login_register.urls as login_register
+import authentication.urls as auth
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('notes/', include(notes)),
-    path("tasks/",include(tasks)),
+    path('tasks/',include(tasks)),
     path('profile/', include(profile)),
     path('weekly_schedule/', include(weekly_schedule)),
-    path('login/', include(login_register)),
+    path('account/', include(login_register)),
     path('personal_journal/', include(personal_journal)),
-    re_path(r'^$', index_to_do_list.as_view(), name='index')
+    path('motivasi/', include(pesan_motivasi)),
+    path('auth/', include(auth)),
+    re_path(r'^$', index, name='index'),
 ]

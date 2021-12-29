@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+{% endblock head %}
+
+{% block navbar %}
+    <header>
+        <div class="container">
+            <div class="header-right">
+                <a href="/weekly_schedule"><b>Home</b></a>
+                <a href="/weekly_schedule"><b>Schedule List</b></a>
+            </div>
+        </div>
+    </header> 
+{% endblock navbar %}
+
+{% block content %}
+
+    <div class="jumbotron" style="background-color: #EADCA6;">
+        <div class="form-schedule">
+            <h3>Tambahkan Schedule di sini</h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_ul }}
+                </table>
+                <input type="submit" value="Submit" class="submit-btn">
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}

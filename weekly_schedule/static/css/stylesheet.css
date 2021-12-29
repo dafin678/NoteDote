@@ -1,8 +1,134 @@
-/* * {
-    background-color: yellow;
-} */
-.weakly-schedule-h1 {
-    text-align: center;
-    /* color: blue; */
-    margin-bottom: 30px
+.body-index{
+    background: #EADCA6;
+    min-height: 100%;
+    height: auto;
+    background-size:cover;
 }
+
+.body-container {
+    padding: 0;
+}
+
+#weakly-schedule-h1 {
+    text-align: center;
+    color: #87AAAA;
+    /* margin-bottom: 30px */
+    /* margin-top: -100px; */
+}
+
+.card {
+    height: 400px;
+    /* width: fit-content; */
+    overflow-y: auto;
+    /* margin-left: 10px; */
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+}
+
+.card-title {
+    font-size: x-large;
+    text-align: center;
+}
+
+.card-subtitle {
+    text-align: center;
+}
+
+.last-card {
+    width: calc(100%/3);
+}
+
+.cont-body {
+    /* margin-top: 100px; */
+    /* padding-top: 160px; */
+}
+
+.complete-btn {
+    border-radius: 0.25rem;
+    background-color: #082032;
+    border-color: #082032;
+    color: white;
+}
+
+.complete:hover {
+    background-color: #ADC2A9;
+}
+
+.row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.col {
+    /* margin: auto 30px; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  top: 0;
+  background-color:#343a40!important;
+  /* position :fixed; */
+  /* overflow: hidden; */
+  position :relative;
+  margin-top: 0px;
+  margin-bottom: 100px;
+}
+
+.header-left {
+  line-height: 65px;
+  padding: 0 30px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s; 
+  text-decoration: none;
+  font-size:20px;
+}
+.header-right {
+    float: right;
+    margin-right: -80px;
+}
+.header-right a {
+    line-height: 65px;
+    padding: 0 30px;
+    color: white;
+    display: block;
+    float: left;
+    transition: all 0.5s; 
+    text-decoration: none;
+    font-size:20px;
+}
+.header-right a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-schedule {
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    margin: 10px;
+    list-style: none;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    border-radius: 0.25rem;
+}
+
+.submit-btn:hover {
+    background-color: #3D56B2;
+    color: white;
+}
+
+.strike-through{
+    /* text-decoration: line-through; */
+    color: #ADC2A9;
+    font-weight: bold;
+    /* text-decoration: solid; */
+  }

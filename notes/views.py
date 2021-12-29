@@ -15,7 +15,7 @@ def add_note(request):
     context['form'] = form
     return render(request, "notes_form.html", context)
 
-def note_list(request):
+def index(request):
     note = notes.objects.all()
     response = {'notes': note}
     return render(request, "notes_list.html", response)

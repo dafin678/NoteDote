@@ -36,7 +36,7 @@ PRODUCTION = os.getenv('DATABASE_URL') is not None
 # SECURITY WARNING: don't run with debug turned on in production!
 # If you want to enable debugging on Heroku for learning purposes,
 # set this to True.
-DEBUG = not PRODUCTION
+DEBUG = False
 
 HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
 
@@ -61,8 +61,11 @@ INSTALLED_APPS = [
     'login_register',
     'notes',
     'personal_journal',
+    'pesanmotivasi',
     'ckeditor',
     # 'rest_framework'
+    "authentication",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -74,6 +77,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -107,6 +111,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+# fixed CKEditor size
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': '100%'
+    },
 }
 
 # Set database settings automatically using DATABASE_URL.
@@ -177,3 +188,12 @@ for directory in [*STATICFILES_DIRS, STATIC_ROOT]:
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
