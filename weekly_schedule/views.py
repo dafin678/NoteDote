@@ -6,6 +6,7 @@ from .forms import ScheduleForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
+from django.core import serializers
 
 # Create your views here.
 class list_schedule(LoginRequiredMixin, ListView):
@@ -31,6 +32,11 @@ def add_schedule(request):
 
     response = {'form':form}
     return render(request, 'schedule_form.html', response)
+
+def get_all_schedule(request):
+    schedules = Weekly_schedule.objects.all().filter(user=self.request.user).order_by('start_time')
+    data = serializers.serialize('json',schedules)
+    return HttpResponse(data, content_type="application/json")
 
 # def delete_schedule(request, id):
 #     schedule = Weekly_schedule.get(pk=id)
