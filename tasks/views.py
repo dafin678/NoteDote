@@ -43,6 +43,6 @@ class TaskDeleteView(LoginRequiredMixin,View):
         return JsonResponse({"message": "Wrong request"})
 
 def get_all_tasks(request):
-    all_tasks = Task.objects.all().filter(user=User.objects.get(username=request.user))
+    all_tasks = Task.objects.all()
     data = serializers.serialize('json', all_tasks)
     return HttpResponse(data, content_type="application/json")
