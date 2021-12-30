@@ -6,6 +6,9 @@ from .forms import ScheduleForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
+from django.core import serializers
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 class list_schedule(LoginRequiredMixin, ListView):
@@ -31,6 +34,47 @@ def add_schedule(request):
 
     response = {'form':form}
     return render(request, 'schedule_form.html', response)
+
+def get_all_schedule(request):
+    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).order_by('start_time')
+    data = serializers.serialize('json',list_schedule)
+    return HttpResponse(data, content_type="application/json")
+
+def get_monday_schedule(request):
+    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=1).order_by('start_time')
+    data = serializers.serialize('json',list_schedule)
+    return HttpResponse(data, content_type="application/json")
+
+def get_tuesday_schedule(request):
+    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=2).order_by('start_time')
+    data = serializers.serialize('json',list_schedule)
+    return HttpResponse(data, content_type="application/json")
+
+def get_wednesday_schedule(request):
+    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=3).order_by('start_time')
+    data = serializers.serialize('json',list_schedule)
+    return HttpResponse(data, content_type="application/json")
+
+def get_thursday_schedule(request):
+    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=4).order_by('start_time')
+    data = serializers.serialize('json',list_schedule)
+    return HttpResponse(data, content_type="application/json")
+
+def get_friday_schedule(request):
+    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=5).order_by('start_time')
+    data = serializers.serialize('json',list_schedule)
+    return HttpResponse(data, content_type="application/json")
+
+def get_saturday_schedule(request):
+    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=6).order_by('start_time')
+    data = serializers.serialize('json',list_schedule)
+    return HttpResponse(data, content_type="application/json")
+
+def get_sunday_schedule(request):
+    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=7).order_by('start_time')
+    data = serializers.serialize('json',list_schedule)
+    return HttpResponse(data, content_type="application/json")
+
 
 # def delete_schedule(request, id):
 #     schedule = Weekly_schedule.get(pk=id)
