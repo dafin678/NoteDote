@@ -7,6 +7,9 @@ from tasks.models import Task
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core import serializers
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+
 # from django.shortcuts import render, redirect
 # from django.template import loader
 
@@ -27,12 +30,14 @@ class TaskView(LoginRequiredMixin, View):
     def get(self,request, *args, **kwargs):
         return render(request, "form.html", {})
 
+@method_decorator(csrf_exempt, name='dispatch')
 class ViewTaskView(LoginRequiredMixin,View):
     login_url = '/admin/login/'
     def get(self,request, *args, **kwargs):
         tasks = Task.objects.filter(user=User.objects.get(username=request.user))
         return render(request, "view.html", {"tasks":tasks.order_by("task_date", "end_time")})
 
+@method_decorator(csrf_exempt, name='dispatch')
 class TaskDeleteView(LoginRequiredMixin,View):
     login_url = '/admin/login/'
     def get(self,request, pk, *args, **kwargs):
