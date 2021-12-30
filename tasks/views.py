@@ -13,6 +13,7 @@ from django.views.decorators.csrf import csrf_exempt
 # from django.shortcuts import render, redirect
 # from django.template import loader
 
+@method_decorator(csrf_exempt, name='dispatch')
 class TaskView(LoginRequiredMixin, View):
     login_url = '/admin/login/'
     form_class = TaskForm
@@ -30,7 +31,6 @@ class TaskView(LoginRequiredMixin, View):
     def get(self,request, *args, **kwargs):
         return render(request, "form.html", {})
 
-@method_decorator(csrf_exempt, name='dispatch')
 class ViewTaskView(LoginRequiredMixin,View):
     login_url = '/admin/login/'
     def get(self,request, *args, **kwargs):
