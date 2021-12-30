@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileEditForm
 from django.views.decorators.csrf import csrf_exempt
+import json
 
 @login_required(login_url='/admin/login/')
 def index(request):
@@ -17,7 +18,7 @@ def edit(request):
     if request.method == 'POST':
         form = ProfileEditForm(request.POST, instance=request.user.profile) 
         if form.is_valid():
-            
+            print (form)
             form.save()
             return redirect('/profile')
 
@@ -43,3 +44,21 @@ def get_profile(request):
             "imageUrl" : "http://notedote.herokuapp.com/static/img/" + image_name
         }
         return JsonResponse(data)
+
+@csrf_exempt
+def submit_profile(request):
+    if request.method == 'POST':
+        form = ProfileEditForm(request.POST, instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            return JsonResponse({
+                "status": True,
+                "message": "Successfully submitted"
+            }, status=200)
+        else:
+            return JsonResponse({
+                "status": False,
+                "message": "Failed to submit, name or about is invalid."
+            }, status=401)
+            
+
