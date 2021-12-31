@@ -9,6 +9,8 @@ from django.views.generic.list import ListView
 from django.core import serializers
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+
 
 
 # Create your views here.
@@ -84,6 +86,19 @@ def get_sunday_schedule(request):
     list_schedule = Weekly_schedule.objects.all().filter(day=7).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
+
+@csrf_exempt
+def post_data(request):
+    data = json.loads(request.body)
+    print(request)
+    name = data["name"]
+    day = data["day"]
+    start_time = data["start_time"]
+    due_time = data["due_time"]
+    Weekly_schedule.objects.get_or_create(
+        name=name, day=day, start_time=start_time, due_time=due_time
+    )
+    return JsonResponse({"status": True}, safe=False)
 
 
 # def delete_schedule(request, id):
