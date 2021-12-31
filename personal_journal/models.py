@@ -4,7 +4,6 @@ from ckeditor.fields import RichTextField
 
 class Entry(models.Model):
     title = models.CharField(max_length=1000)
-    # text = models.TextField()
     text = RichTextField(blank=True,null=True)
 
 

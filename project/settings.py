@@ -63,7 +63,8 @@ INSTALLED_APPS = [
     'personal_journal',
     'pesanmotivasi',
     'ckeditor',
-    # 'rest_framework'
+    'journal.apps.JournalConfig',#khusus personal journal aja versi app
+    'rest_framework',
     "authentication",
     "corsheaders",
 ]

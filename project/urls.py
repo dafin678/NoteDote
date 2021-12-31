@@ -24,6 +24,7 @@ import pesanmotivasi.urls as pesan_motivasi
 import notes.urls as notes
 import login_register.urls as login_register
 import authentication.urls as auth
+from .router import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,5 +36,6 @@ urlpatterns = [
     path('personal_journal/', include(personal_journal)),
     path('motivasi/', include(pesan_motivasi)),
     path('auth/', include(auth)),
+    path('api/',include(router.urls)),#khusus personal journal versi app
     re_path(r'^$', index, name='index'),
 ]
