@@ -42,37 +42,37 @@ def get_all_schedule(request):
     return HttpResponse(data, content_type="application/json")
 
 def get_monday_schedule(request):
-    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=1).order_by('start_time')
+    list_schedule = Weekly_schedule.objects.all().filter(day=1).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
 def get_tuesday_schedule(request):
-    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=2).order_by('start_time')
+    list_schedule = Weekly_schedule.objects.all().filter(day=2).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
 def get_wednesday_schedule(request):
-    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=3).order_by('start_time')
+    list_schedule = Weekly_schedule.objects.all().filter(day=3).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
 def get_thursday_schedule(request):
-    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=4).order_by('start_time')
+    list_schedule = Weekly_schedule.objects.all().filter(day=4).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
 def get_friday_schedule(request):
-    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=5).order_by('start_time')
+    list_schedule = Weekly_schedule.objects.all().filter(day=5).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
 def get_saturday_schedule(request):
-    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=6).order_by('start_time')
+    list_schedule = Weekly_schedule.objects.all().filter(day=6).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
 def get_sunday_schedule(request):
-    list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).filter(day=7).order_by('start_time')
+    list_schedule = Weekly_schedule.objects.all().filter(day=7).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
