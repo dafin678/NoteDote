@@ -37,7 +37,7 @@ def add_schedule(request):
 
 def get_all_schedule(request):
     # list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).order_by('start_time')
-    list_schedule = Weekly_schedule.objects.all()
+    list_schedule = Weekly_schedule.objects.all().order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
