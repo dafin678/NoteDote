@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
 from django.core import serializers
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -35,42 +36,50 @@ def add_schedule(request):
     response = {'form':form}
     return render(request, 'schedule_form.html', response)
 
+@csrf_exempt
 def get_all_schedule(request):
     # list_schedule = Weekly_schedule.objects.all().filter(user=User.objects.get(username=request.user)).order_by('start_time')
     list_schedule = Weekly_schedule.objects.all().order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
+@csrf_exempt
 def get_monday_schedule(request):
     list_schedule = Weekly_schedule.objects.all().filter(day=1).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
+@csrf_exempt
 def get_tuesday_schedule(request):
     list_schedule = Weekly_schedule.objects.all().filter(day=2).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
+@csrf_exempt
 def get_wednesday_schedule(request):
     list_schedule = Weekly_schedule.objects.all().filter(day=3).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
+@csrf_exempt
 def get_thursday_schedule(request):
     list_schedule = Weekly_schedule.objects.all().filter(day=4).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
+@csrf_exempt
 def get_friday_schedule(request):
     list_schedule = Weekly_schedule.objects.all().filter(day=5).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
+@csrf_exempt
 def get_saturday_schedule(request):
     list_schedule = Weekly_schedule.objects.all().filter(day=6).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
     return HttpResponse(data, content_type="application/json")
 
+@csrf_exempt
 def get_sunday_schedule(request):
     list_schedule = Weekly_schedule.objects.all().filter(day=7).order_by('start_time')
     data = serializers.serialize('json',list_schedule)
